@@ -1,0 +1,29 @@
+/* Paleta oficial de SINOVA (GA5-220501095-AA1-EV01) sobre Pico CSS */
+:root {
+    --sinova-azul: #1A365D;
+    --sinova-gris: #F7FAFC;
+    --sinova-borde: #E2E8F0;
+    --sinova-coral: #E53E3E;
+    --pico-font-family: Inter, Roboto, Arial, sans-serif;
+    --pico-primary: #1A365D;
+    --pico-primary-background: #1A365D;
+    --pico-primary-border: #1A365D;
+    --pico-primary-hover-background: #142a49;
+    --pico-border-radius: 4px;
+}
+body { background: var(--sinova-gris); }
+.login { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+.login-marca { background: var(--sinova-azul); color: #fff; display: flex; flex-direction: column;
+    justify-content: center; padding: 3rem; }
+.login-marca h1 { color: #fff; font-size: 3rem; letter-spacing: .2rem; margin: 0; }
+.login-marca p { color: #cbd5e0; }
+.login-formulario { display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.login-formulario article { width: 100%; max-width: 380px; }
+.alerta { color: var(--sinova-coral); border: 1px solid var(--sinova-coral); padding: .6rem;
+    border-radius: 4px; font-size: .9rem; }
+.aviso { color: var(--sinova-azul); border: 1px solid var(--sinova-borde); padding: .6rem; border-radius: 4px; }
+.barra { background: var(--sinova-azul); color: #fff; padding: .8rem 1.5rem; display: flex;
+    justify-content: space-between; align-items: center; }
+.barra a, .barra strong { color: #fff; }
+table { font-size: .9rem; }
+@media (max-width: 760px) { .login { grid-template-columns: 1fr; } .login-marca { padding: 2rem; } }

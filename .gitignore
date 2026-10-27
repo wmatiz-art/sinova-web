@@ -1,0 +1,4 @@
+/target/
+/nbproject/private/
+src/main/resources/db.properties
+nb-configuration.xml

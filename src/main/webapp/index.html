@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINOVA - Iniciar sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="css/sinova.css">
+</head>
+<body>
+    <main class="login">
+        <section class="login-marca">
+            <h1>SINOVA</h1>
+            <p>Sistema de Liquidación de Nómina</p>
+            <p><small>Bienvenidos ficha 3336196 · GA7-220501096-AA2-EV02</small></p>
+        </section>
+        <section class="login-formulario">
+            <article>
+                <h2>Iniciar sesión</h2>
+                <p id="mensaje"></p>
+                <!-- Formulario HTML que envía los datos al servlet /login con el método POST -->
+                <form name="login" action="login" method="post">
+                    <label for="correo">Correo institucional / Usuario</label>
+                    <input type="email" id="correo" name="correo" placeholder="usuario@sinova.com" required>
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                    <button type="submit">INGRESAR AL SISTEMA</button>
+                </form>
+            </article>
+        </section>
+    </main>
+    <script>
+        const mensajes = {
+            campos: "Debe escribir el correo y la contraseña.",
+            credenciales: "Correo o contraseña incorrectos.",
+            conexion: "No fue posible conectar con la base de datos.",
+            sesion: "Debe iniciar sesión para ingresar al panel."
+        };
+        const parametros = new URLSearchParams(location.search);
+        const caja = document.getElementById("mensaje");
+        if (parametros.has("error")) {
+            caja.textContent = mensajes[parametros.get("error")] || "Error desconocido.";
+            caja.className = "alerta";
+        } else if (parametros.has("salida")) {
+            caja.textContent = "Sesión cerrada correctamente.";
+            caja.className = "aviso";
+        }
+    </script>
+</body>
+</html>
